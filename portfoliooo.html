@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nidhi Kulkarni | CS & Design Portfolio</title>
+    <meta name="description" content="Personal portfolio of Nidhi Kulkarni, a Computer Science and Design undergraduate passionate about Machine Learning, Data Analytics, and UI/UX design.">
+    <meta name="keywords" content="Nidhi Kulkarni, Portfolio, Web Developer, UI/UX Designer, Machine Learning, Data Analytics">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lavender: #E6E6FA;
+            --slate: #1E293B;
+            --light-bg: #F8F7FF;
+            --light-text: #0F172A;
+            --dark-bg: #0F172A;
+            --dark-text: #E2E8F0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--light-text);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark body {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glassmorphism {
+            background: rgba(30, 41, 59, 0.1);
+            border: 1px solid rgba(51, 65, 85, 0.3);
+        }
+        .skill-tag {
+            display: inline-block;
+            background-color: #E0E7FF; /* indigo-100 */
+            color: #3730A3; /* indigo-800 */
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid transparent;
+        }
+        .dark .skill-tag {
+            background-color: #3730A3; /* indigo-800 */
+            color: #C7D2FE; /* indigo-200 */
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px -1px rgb(0 0 0 / 0.1);
+            border-color: #A5B4FC; /* indigo-300 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-slate-800 dark:text-white">NK.</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">About</a>
+                <a href="#skills" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Skills</a>
+                <a href="#projects" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Projects</a>
+                <a href="#certifications" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Certifications</a>
+                <a href="#contact" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</a>
+            </div>
+            <div class="flex items-center">
+                <button id="theme-toggle" class="mr-4 text-slate-600 dark:text-slate-300 focus:outline-none">
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                    <i class="fas fa-moon inline dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-slate-600 dark:text-slate-300 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800">
+            <a href="#about" class="block py-2 px-6 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">About</a>
+            <a href="#skills" class="block py-2 px-6 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">Skills</a>
+            <a href="#projects" class="block py-2 px-6 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">Projects</a>
+            <a href="#certifications" class="block py-2 px-6 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">Certifications</a>
+            <a href="#contact" class="block py-2 px-6 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center pt-24 md:pt-0">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-800 dark:text-white leading-tight">Nidhi Kulkarni</h1>
+                <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">CS & Design Student | ML Enthusiast | Web Developer</p>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <a href="https://github.com/Nidhirk2113" target="_blank" class="text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition text-2xl"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nidhi-kulkarni-/" target="_blank" class="text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition text-2xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="nidhirk2113@gmail.com" class="text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition text-2xl"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="mt-10">
+                    <button id="resume-button" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-500/20">
+                        View Resume
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
+                 <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-lavender to-indigo-200 dark:from-slate-700 dark:to-indigo-900 overflow-hidden shadow-2xl">
+                    <!-- 
+                        NOTE: The Google Drive link for the profile picture may not display correctly 
+                        because Google Drive is not designed for direct image hosting on websites and can block it.
+                        
+                        For a reliable solution, please upload your image to a service like GitHub or Imgur,
+                        and replace the 'src' link below with the direct link to your image.
+                        
+                        Example using a raw GitHub link: 
+                        https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/profile.jpg 
+                    -->
+                    <img src="https://placehold.co/400x400/E6E6FA/312E81?text=NK" alt="Nidhi Kulkarni" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="py-20 section-reveal">
+            <h2 class="text-3xl font-bold text-center mb-2 text-slate-800 dark:text-white">About Me</h2>
+            <div class="w-20 h-1 bg-indigo-500 mx-auto mb-12"></div>
+            <div class="max-w-3xl mx-auto text-center text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p>I'm an inquisitive and driven Computer Science and Design undergraduate at Dayananda Sagar Academy of Technology and Management. With a strong passion for Machine Learning, Data Analytics, and UI/UX design, I've gained hands-on experience building web applications and beginner-level AI tools. I'm always eager to apply innovative thinking to real-world problems and actively upskill through challenging projects and collaborative learning environments.</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="py-20 section-reveal">
+            <div class="container mx-auto px-8 py-10 rounded-xl shadow-lg bg-slate-50 dark:bg-slate-800/60">
+                <h2 class="text-3xl font-bold pb-3 mb-8 text-slate-800 dark:text-white">Skills</h2>
+                
+                <div class="mb-8">
+                    <h3 class="mb-4 font-semibold text-lg text-slate-700 dark:text-slate-200">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="mb-4 font-semibold text-lg text-slate-700 dark:text-slate-200">Frameworks & Libraries</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="mb-4 font-semibold text-lg text-slate-700 dark:text-slate-200">Databases</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="mb-4 font-semibold text-lg text-slate-700 dark:text-slate-200">Tools & Platforms</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Godot 4</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="mb-4 font-semibold text-lg text-slate-700 dark:text-slate-200">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Communication</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-20 section-reveal">
+            <h2 class="text-3xl font-bold text-center mb-2 text-slate-800 dark:text-white">Featured Projects</h2>
+            <div class="w-20 h-1 bg-indigo-500 mx-auto mb-12"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Project Card 1 -->
+                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800 dark:text-white">Companion Chronicles</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">A full-stack veterinary dashboard for managing pet medical records with role-based access.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">React.js</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Node.js</span>
+                             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <a href="https://github.com/Nidhirk2113" target="_blank" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Project <i class="fab fa-github ml-1"></i></a>
+                        <a href="https://drive.google.com/drive/folders/1CFxdjuyvlqo9IWroKiH_WyApQeB_8bKS?usp=drive_link" target="_blank" class="font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">View Images <i class="fas fa-images ml-1"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800 dark:text-white">Bunny Bot AI</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">A conversational AI chatbot for recipe suggestions and restaurant lookups using Gemini AI.</p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">Flask</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">Gemini AI</span>
+                        </div>
+                    </div>
+                     <div class="px-6 pb-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <a href="https://github.com/Nidhirk2113" target="_blank" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Project <i class="fab fa-github ml-1"></i></a>
+                        <a href="https://drive.google.com/drive/folders/1g-qkW7zcdGKOieuAi6LO34NtFfO8DZ0f?usp=drive_link" target="_blank" class="font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">View Images <i class="fas fa-images ml-1"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                 <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800 dark:text-white">Breast Cancer Prediction</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">ML models (SVM, KNN, RF) to predict breast cancer with over 95% accuracy.</p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Python</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-orange-900 dark:text-orange-300">Scikit-learn</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">Pandas</span>
+                        </div>
+                    </div>
+                     <div class="px-6 pb-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <a href="https://github.com/Nidhirk2113" target="_blank" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Project <i class="fab fa-github ml-1"></i></a>
+                        <a href="https://drive.google.com/drive/folders/1w6Df2HfUGDKhKjEgkB629G1SIMALfbbP?usp=drive_link" target="_blank" class="font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">View Images <i class="fas fa-images ml-1"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800 dark:text-white">The Development of MiniX</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">Published research on a 2D pixel-art game's design, narrative, and level mechanics.</p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-200">Godot 4</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">Game Design</span>
+                            <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-cyan-900 dark:text-cyan-300">Research</span>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <a href="https://drive.google.com/file/d/1fmbIygjWUzIGZDJuHV1IQ4TE6M46ozeI/view?usp=drive_link" target="_blank" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Publication <i class="fas fa-book-open ml-1"></i></a>
+                        <a href="https://github.com/Nidhirk2113" target="_blank" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Project <i class="fab fa-github ml-1"></i></a>
+                        <a href="https://drive.google.com/drive/folders/1XO87df47_SAwBX_Pg7fSgkJNqgaQo8y3?usp=drive_link" target="_blank" class="font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">View Images <i class="fas fa-images ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Certifications -->
+        <section id="certifications" class="py-20 section-reveal">
+            <h2 class="text-3xl font-bold text-center mb-2 text-slate-800 dark:text-white">Certifications</h2>
+            <div class="w-20 h-1 bg-indigo-500 mx-auto mb-12"></div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                 <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-award text-2xl text-indigo-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-slate-700 dark:text-slate-200">Generative AI: Prompt Engineering Basics</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">IBM via Coursera</p>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/11_ufOtWb3_484LDUwEKUdGR04-Ro5Pv5/view?usp=drive_link" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline whitespace-nowrap">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                       <i class="fas fa-award text-2xl text-indigo-500"></i>
+                       <div>
+                           <h3 class="font-semibold text-slate-700 dark:text-slate-200">Generative AI : Introduction and Applications</h3>
+                           <p class="text-sm text-slate-500 dark:text-slate-400">IBM via Coursera</p>
+                       </div>
+                   </div>
+                   <a href="https://drive.google.com/file/d/1OYmreX8Tt5WafQrxEaIQab74hwzjDQBy/view?usp=drive_link" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline whitespace-nowrap">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+               </div>
+                 <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm flex items-center justify-between">
+                     <div class="flex items-center space-x-4">
+                        <i class="fas fa-award text-2xl text-indigo-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-slate-700 dark:text-slate-200">Software Engineering and Agile Software Development</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Infosys Springboard</p>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1Sj5RUZCZYIn9BdO5DqF6NOO7oN6RTwI2/view?usp=drive_link" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline whitespace-nowrap">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm flex items-center justify-between">
+                     <div class="flex items-center space-x-4">
+                        <i class="fas fa-award text-2xl text-indigo-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-slate-700 dark:text-slate-200">Agile Scrum in Practice</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Infosys Springboard</p>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1fkza_fPXRqgL-b5Ij6yul7TWogEwS3NG/view?usp=drive_link" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline whitespace-nowrap">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+                 <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm flex items-center justify-between">
+                     <div class="flex items-center space-x-4">
+                        <i class="fas fa-award text-2xl text-indigo-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-slate-700 dark:text-slate-200">Blockchain and its Applications</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">NPTEL</p>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1SiwWofcarORXQDmc7UNt0iMK8adV23gC/view?usp=drive_link" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline whitespace-nowrap">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm flex items-center justify-between">
+                     <div class="flex items-center space-x-4">
+                        <i class="fas fa-award text-2xl text-indigo-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-slate-700 dark:text-slate-200">Sustainability Nestlé E-Learning</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Nestlé Connect</p>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1xCxIm8KOj9A2OxSeiAJIs2XdGa5SiXgn/view?usp=drive_link" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline whitespace-nowrap">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center section-reveal">
+            <h2 class="text-3xl font-bold text-center mb-2 text-slate-800 dark:text-white">Get In Touch</h2>
+             <div class="w-20 h-1 bg-indigo-500 mx-auto mb-8"></div>
+            <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-300 mb-8">
+                I'm currently seeking new opportunities and would love to hear from you. Whether you have a question or just want to connect, feel free to reach out!
+            </p>
+            <a href="mailto:nidhirk2113@gmail.com" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-500/20">
+                Say Hello
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 dark:bg-slate-800/50 mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500 dark:text-slate-400">
+            <div class="flex justify-center space-x-6 mb-4">
+                 <a href="https://github.com/Nidhirk2113" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition text-xl"><i class="fab fa-github"></i></a>
+                 <a href="https://www.linkedin.com/in/nidhi-kulkarni-/" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition text-xl"><i class="fab fa-linkedin"></i></a>
+                 <a href="mailto:nidhirk2113@gmail.com" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition text-xl"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Nidhi Kulkarni. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+            <div class="p-4 flex justify-between items-center border-b border-slate-200 dark:border-slate-700">
+                <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Nidhi Kulkarni - Resume</h3>
+                <button id="close-modal-button" class="text-slate-500 hover:text-red-500">&times;</button>
+            </div>
+            <div class="p-4 flex-grow overflow-y-auto">
+                 <iframe src="https://docs.google.com/gview?url=https://drive.google.com/file/d/1DF7qaPsDYhgZRBuLqVeiAv-cNQY9qG9I/view?usp=sharing&embedded=true" class="w-full h-[70vh]" frameborder="0"></iframe>
+            </div>
+             <div class="p-4 border-t border-slate-200 dark:border-slate-700 text-right">
+                <a href="https://drive.google.com/file/d/1DF7qaPsDYhgZRBuLqVeiAv-cNQY9qG9I/view?usp=sharing" download="Nidhi_Kulkarni_Resume.pdf" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition">
+                    Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Theme Toggling ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlEl = document.documentElement;
+
+            // Apply theme on initial load
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlEl.classList.add('dark');
+            } else {
+                htmlEl.classList.remove('dark');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                if (htmlEl.classList.contains('dark')) {
+                    htmlEl.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu on link click
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- Header background on scroll ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-sm', 'shadow-sm');
+                } else {
+                    header.classList.remove('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-sm', 'shadow-sm');
+                }
+            });
+
+            // --- Resume Modal ---
+            const resumeButton = document.getElementById('resume-button');
+            const resumeModal = document.getElementById('resume-modal');
+            const closeModalButton = document.getElementById('close-modal-button');
+            
+            resumeButton.addEventListener('click', () => resumeModal.classList.remove('hidden'));
+            closeModalButton.addEventListener('click', () => resumeModal.classList.add('hidden'));
+            resumeModal.addEventListener('click', (e) => {
+                if(e.target === resumeModal) {
+                    resumeModal.classList.add('hidden');
+                }
+            });
+            
+            // --- Intersection Observer for animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.section-reveal').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
