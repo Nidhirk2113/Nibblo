@@ -71,10 +71,14 @@ function App() {
         <div className="section-label"><span>02</span> THE CAMERA ROLL CORNER</div>
         <div className="section-title-row"><h2>Little bits of <em>life.</em></h2><p>A photo dump of places, people,<br/>phases and things I want to remember.</p></div>
         <div className="photo-dump-grid">
-          <div className="photo-tile photo-tile-tall"><div className="photo-placeholder photo-scene-one"><span className="photo-sun">☼</span><span className="photo-hill hill-one"/><span className="photo-hill hill-two"/></div><span className="photo-caption">little escapes <b>01</b></span></div>
-          <div className="photo-tile"><div className="photo-placeholder photo-scene-two"><span className="photo-window">✳</span><span className="photo-label">SLOW<br/>MORNINGS</span></div><span className="photo-caption">a moment to pause <b>02</b></span></div>
-          <div className="photo-tile"><div className="photo-placeholder photo-scene-three"><span className="photo-record">♫</span><span className="photo-label">ON<br/>REPEAT</span></div><span className="photo-caption">soundtrack of the week <b>03</b></span></div>
-          <div className="photo-tile photo-tile-wide"><div className="photo-placeholder photo-scene-four"><span className="photo-label">COLLECTING<br/>GOOD DAYS</span><span className="photo-flower">✿</span><span className="photo-spark">✦</span></div><span className="photo-caption">the little things <b>04</b></span></div>
+          <figure className="photo-tile photo-tile-tall"><img src="/photos/ootd%202.0%20-%20Graduation.jpeg" alt="Graduation day outfit" loading="lazy"/><figcaption className="photo-caption">the graduation glow <b>01</b></figcaption></figure>
+          <figure className="photo-tile"><img src="/photos/Mullayanagiri%20hills.jpg" alt="A view from Mullayanagiri hills" loading="lazy"/><figcaption className="photo-caption">somewhere in the hills <b>02</b></figcaption></figure>
+          <figure className="photo-tile"><img src="/photos/me%20%26%20my%20ppl%20at%20sunidhi%20chauhan%20concert.jpeg" alt="Concert night with friends" loading="lazy"/><figcaption className="photo-caption">loud music, good people <b>03</b></figcaption></figure>
+          <figure className="photo-tile"><img src="/photos/class%20of%202026.jpeg" alt="Class of 2026" loading="lazy"/><figcaption className="photo-caption">the people who made it <b>04</b></figcaption></figure>
+          <figure className="photo-tile"><img src="/photos/Ethnic%20day%202.0.jpeg" alt="Ethnic day with classmates" loading="lazy"/><figcaption className="photo-caption">a little festive magic <b>05</b></figcaption></figure>
+          <figure className="photo-tile"><img src="/photos/ootd%203.0%20-%20Farewell.png" alt="Farewell day portrait" loading="lazy"/><figcaption className="photo-caption">one for the memories <b>06</b></figcaption></figure>
+          <figure className="photo-tile"><img src="/photos/Seniors%20%26%20us.jpeg" alt="With seniors and friends" loading="lazy"/><figcaption className="photo-caption">good people, good times <b>07</b></figcaption></figure>
+          <figure className="photo-tile photo-tile-wide"><img src="/photos/Taranga%202026%20-%20The%20DSI%20Fest.jpeg" alt="Taranga 2026 college fest" loading="lazy"/><figcaption className="photo-caption">campus days, core memories <b>08</b></figcaption></figure>
         </div>
         <p className="photo-note">A little space for real snapshots — I’ll add my own camera-roll favourites here soon. <span>♡</span></p>
       </section>
