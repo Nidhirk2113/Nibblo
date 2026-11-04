@@ -31,3 +31,6 @@
 .photo-caption{font:italic 12px var(--serif);color:var(--muted);display:flex;justify-content:space-between;padding:0 3px 2px}.photo-caption b{font:9px var(--mono);font-weight:400;color:var(--accent)}
 .photo-note{font-size:11px;color:var(--muted);margin:18px 0 0}.photo-note span{color:var(--accent);font-size:17px;margin-left:5px}
 @media(max-width:640px){.photo-dump-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 150px 150px;gap:10px}.photo-tile-tall{grid-row:span 2}.photo-tile-wide{grid-column:span 2}.photo-scene-four .photo-label{font-size:15px}.photo-flower{font-size:70px}}
+
+
+.photo-tile{margin:0;min-height:0}.photo-tile>img{display:block;width:100%;height:100%;min-height:0;flex:1;object-fit:cover;border-radius:7px;background:var(--soft)}.photo-tile-tall>img{min-height:0}.photo-tile-wide>img{object-position:center 42%}
